@@ -1,0 +1,55 @@
+﻿@page "/Register"
+
+@using DatabaseLib
+
+@inject NavigationManager NavManager
+@inject IJSRuntime JsRuntime
+@inject IUsersData _db
+
+<EditForm Model="@user" OnValidSubmit="@InsertUser">
+    <DataAnnotationsValidator />
+    <div class="row">
+        <div class="col-lg-4 offset-lg-4 pb-4 border">
+            <div class="mb-3 text-center">
+                <h3>회원가입</h3>
+            </div>
+            <div class="mb-3">
+                <label>Email</label>
+                <input @bind="user.Email" class="form-control" placeholder="Input your E-mail" />
+                <ValidationMessage For="@(() => user.Email)" />
+            </div>
+            <div class="mb-3">
+                <label>Password</label>
+                <input @bind="user.Password" class="form-control" type="password" placeholder="Input your password" />
+            </div>
+            <div class="mb-3 d-grid gap-2">
+                <input type="submit" class="btn btn-primary" value="회원가입" />
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+
+@code {
+    private DisplayUserModel user = new DisplayUserModel();
+
+    private async Task InsertUser()
+    {
+        Users newUser = new Users
+        {
+            Email = user.Email,
+            Password = user.Password,
+        };
+
+        var result = await _db.InsertUsers(newUser);
+
+        if (result)
+        {
+            user = new DisplayUserModel();
+
+            await JsRuntime.InvokeVoidAsync("alert", "회원가입 성공!");
+
+            NavManager.NavigateTo("/");
+        }
+    }
+}

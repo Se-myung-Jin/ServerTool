@@ -10,4 +10,8 @@
     <Folder Include="Data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseLib\DatabaseLib.csproj" />
+  </ItemGroup>
+
 </Project>
