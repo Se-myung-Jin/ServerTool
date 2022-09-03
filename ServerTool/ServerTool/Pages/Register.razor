@@ -1,4 +1,4 @@
-﻿@page "/Register"
+﻿@page "/register"
 
 @using DatabaseLib
 
@@ -22,8 +22,12 @@
                 <label>Password</label>
                 <input @bind="user.Password" class="form-control" type="password" placeholder="Input your password" />
             </div>
+            <div class="mb-3">
+                <label>Confirm Password</label>
+                <input @bind="confirmPassword" class="form-control" type="password" placeholder="Input your password" />
+            </div>
             <div class="mb-3 d-grid gap-2">
-                <input type="submit" class="btn btn-primary" value="회원가입" />
+                <input type="submit" class="btn btn-primary" value="Register" />
             </div>
         </div>
     </div>
@@ -32,9 +36,16 @@
 
 @code {
     private DisplayUserModel user = new DisplayUserModel();
+    private string confirmPassword = string.Empty;
 
     private async Task InsertUser()
     {
+        if (user.Password != confirmPassword)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "2차 비밀번호가 다릅니다");
+            return;
+        }
+
         Users newUser = new Users
         {
             Email = user.Email,
@@ -46,6 +57,7 @@
         if (result)
         {
             user = new DisplayUserModel();
+            confirmPassword = string.Empty;
 
             await JsRuntime.InvokeVoidAsync("alert", "회원가입 성공!");
 

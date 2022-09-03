@@ -1,4 +1,4 @@
-﻿@page "/Login"
+﻿@page "/"
 
 @using DatabaseLib
 
@@ -23,7 +23,7 @@
                 <input @bind="user.Password" class="form-control" type="password" placeholder="Input your password" />
             </div>
             <div class="mb-3 d-grid gap-2">
-                <input type="submit" class="btn btn-primary" value="로그인" />
+                <input type="submit" class="btn btn-primary" value="Log In" />
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@
             {
                 await JsRuntime.InvokeVoidAsync("alert", "잠겨있는 계정입니다. 관리자에게 문의하세요");
             }
-            else if (result.Confirmed)
+            else if (!result.Confirmed)
             {
                 await JsRuntime.InvokeVoidAsync("alert", "허가되지 않은 계정입니다. 관리자에게 문의하세요");
             }
@@ -62,9 +62,7 @@
             {
                 user = new DisplayUserModel();
 
-                await JsRuntime.InvokeVoidAsync("alert", "로그인 성공");
-
-                NavManager.NavigateTo("/");
+                NavManager.NavigateTo("/home");
             }
         }
     }
