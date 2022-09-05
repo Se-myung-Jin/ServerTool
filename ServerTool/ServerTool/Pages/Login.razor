@@ -35,6 +35,13 @@
 @code {
     private DisplayUserModel user = new DisplayUserModel();
 
+    protected override Task OnInitializedAsync()
+    {
+        user = new DisplayUserModel();
+
+        return base.OnInitializedAsync();
+    }
+
     private async Task GetUser()
     {
         var newPassword = Encrypt(user.Password);

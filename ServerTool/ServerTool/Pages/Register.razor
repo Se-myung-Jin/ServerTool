@@ -40,6 +40,13 @@
     private DisplayUserModel user = new DisplayUserModel();
     private string confirmPassword = string.Empty;
 
+    protected override Task OnInitializedAsync()
+    {
+        user = new DisplayUserModel();
+        confirmPassword = string.Empty;
+
+        return base.OnInitializedAsync();
+    }
     private async Task InsertUser()
     {
         if (user.Password != confirmPassword)
