@@ -1,23 +1,37 @@
-﻿using Microsoft.AspNetCore.Components.Authorization;
+﻿using Blazored.SessionStorage;
+using Microsoft.AspNetCore.Components.Authorization;
 using System.Security.Claims;
 
 namespace ServerTool
 {
     public class CustomAuthenticationStateProvider : AuthenticationStateProvider
     {
-        public override Task<AuthenticationState> GetAuthenticationStateAsync()
+        private ISessionStorageService _sessionStorageService;
+        public CustomAuthenticationStateProvider(ISessionStorageService sessionStorageService)
         {
-            /*ClaimsIdentity identity = new ClaimsIdentity(
-                new[]
-                {
-                    new Claim(ClaimTypes.Name, "d"),
-                }, "apiauth_type");*/
+            _sessionStorageService = sessionStorageService;
+        }
 
-            var identity = new ClaimsIdentity();
+        public override async Task<AuthenticationState> GetAuthenticationStateAsync()
+        {
+            var email = await _sessionStorageService.GetItemAsync<string>("email");
+            ClaimsIdentity identity;
+
+            if (email != null)
+            {
+                identity = new ClaimsIdentity(new[]
+                {
+                    new Claim(ClaimTypes.Name, email),
+                }, "apiauth_type");
+            }
+            else
+            {
+                identity = new ClaimsIdentity();
+            }
 
             var user = new ClaimsPrincipal(identity);
 
-            return Task.FromResult(new AuthenticationState(user));
+            return await Task.FromResult(new AuthenticationState(user));
         }
 
         public void MarkUserAsAuthenticated(string email)
@@ -26,6 +40,17 @@ namespace ServerTool
             {
                 new Claim(ClaimTypes.Name, email),
             }, "apiauth_type");
+
+            var user = new ClaimsPrincipal(identity);
+
+            NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
+        }
+
+        public void MarkUserAsLoggedOut()
+        {
+            _sessionStorageService.RemoveItemAsync("email");
+
+            var identity = new ClaimsIdentity();
 
             var user = new ClaimsPrincipal(identity);
 

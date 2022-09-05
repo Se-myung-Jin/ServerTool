@@ -8,6 +8,7 @@
 @inject IJSRuntime JsRuntime
 @inject IUsersData _db
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
 
 <EditForm Model="@user" OnValidSubmit="@GetUser">
     <DataAnnotationsValidator />
@@ -73,6 +74,8 @@
             else
             {
                 ((CustomAuthenticationStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated(user.Email);
+
+                await sessionStorage.SetItemAsync("email", user.Email);
 
                 user = new DisplayUserModel();
 
