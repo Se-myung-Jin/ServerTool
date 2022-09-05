@@ -7,6 +7,7 @@
 @inject NavigationManager NavManager
 @inject IJSRuntime JsRuntime
 @inject IUsersData _db
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <EditForm Model="@user" OnValidSubmit="@GetUser">
     <DataAnnotationsValidator />
@@ -71,6 +72,8 @@
             }
             else
             {
+                ((CustomAuthenticationStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated(user.Email);
+
                 user = new DisplayUserModel();
 
                 NavManager.NavigateTo("/home");
