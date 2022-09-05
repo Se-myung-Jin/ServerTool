@@ -1,3 +1,10 @@
 ﻿@page "/home"
 
-<h1>Komoris ServerTool</h1>
+<AuthorizeView>
+    <Authorized>
+        <h1>Komoris ServerTool</h1>
+    </Authorized>
+    <NotAuthorized>
+        <h1>Error 404</h1>
+    </NotAuthorized>
+</AuthorizeView>
