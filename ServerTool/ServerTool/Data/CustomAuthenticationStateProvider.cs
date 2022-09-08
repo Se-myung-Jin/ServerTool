@@ -56,5 +56,10 @@ namespace ServerTool
 
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
         }
+
+        public async Task<string> GetUserEmailAddress()
+        {
+            return await _sessionStorageService.GetItemAsync<string>("email");
+        }
     }
 }

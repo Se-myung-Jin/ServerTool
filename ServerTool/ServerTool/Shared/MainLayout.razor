@@ -1,31 +1,30 @@
 ﻿@inherits LayoutComponentBase
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
-<PageTitle>ServerTool</PageTitle>
-
+<RadzenDialog />
 <div class="page">
-    <div class="sidebar">
+    <div class="sidebar" style="background-color: indianred">
         <NavMenu />
     </div>
 
-    <main>
-        <AuthorizeView>
-            <Authorized>
-                <div class="top-row px-4">
+    <div class="main">
+        <div class="top-row px-4">
+            <AuthorizeView>
+                <Authorized>
                     <a href="/" @onclick="(() => Logout())">Log out</a>
-                </div>
-            </Authorized>
-            <NotAuthorized>
-                <div class="top-row px-4">
+                    <a href="/profile">profile</a>
+                </Authorized>
+                <NotAuthorized>
+                    <a href="/">Log in</a>
+                    <a href="/register">Register</a>
+                </NotAuthorized>
+            </AuthorizeView>
+        </div>
 
-                </div>
-            </NotAuthorized>
-        </AuthorizeView>
-
-        <article class="content px-4">
+        <div class="content px-4">
             @Body
-        </article>
-    </main>
+        </div>
+    </div>
 </div>
 
 

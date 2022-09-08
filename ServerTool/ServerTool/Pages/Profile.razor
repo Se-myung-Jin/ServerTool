@@ -1,0 +1,39 @@
+﻿@page "/profile"
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<div class="row">
+    <div class="col-lg-4 offset-lg-4 pb-4 border">
+        <div class="mb-3 text-center">
+            <h3>Profile</h3>
+        </div>
+        <div class="mb-3">
+            <label>Email</label><br/>
+            <h5 style="text-align:right">@email</h5>
+        </div>
+        <br />
+        <div class="mb-3">
+            <label>Name</label>
+            <h5 style="text-align:right">@name</h5>
+        </div>
+    </div>
+</div>
+
+@code {
+    string email = string.Empty;
+    string name = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        email = await GetProfile();
+
+        var temp = email.Split('@');
+
+        name = temp[0];
+    }
+
+    public async Task<string> GetProfile()
+    {
+        return await ((CustomAuthenticationStateProvider)AuthenticationStateProvider).GetUserEmailAddress();
+    }
+
+}
