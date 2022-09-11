@@ -24,7 +24,7 @@
                 <RadzenPanelMenuItem Text="Guild Search" Icon="zoom_in" Path="guild_search"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Guild Log" Icon="zoom_in" Path="guild_log"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Search Log" Icon="menu" Path="log"></RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="로그 조회" Icon="zoom_in" Path="log"></RadzenPanelMenuItem>
             <RadzenPanelMenuItem Text="Maintenance" Icon="engineering">
                 <RadzenPanelMenuItem Text="Server Url" Path="server_url" Icon="home"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Maintenance Schedule" Path="maintenance" Icon="schedule"></RadzenPanelMenuItem>
@@ -36,13 +36,22 @@
                 <RadzenPanelMenuItem Text="Client Config" Path="client_config" Icon="view_headline"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="InGame Config" Path="ingame_config" Icon="view_headline"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Indicators" Icon="assessment">
-                <RadzenPanelMenuItem Text="InGame Indicators" Icon="view_headline">
+            <RadzenPanelMenuItem Text="결제 관련" Icon="attach_money">
+                <RadzenPanelMenuItem Text="결제 내역" Icon="view_headline" Path="payment_history"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="환불 내역" Icon="view_headline" Path="refund_history"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="환불 문의" Icon="view_headline" Path="refund_inquiry"></RadzenPanelMenuItem>
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="실시간 지표" Icon="assessment">
+                <RadzenPanelMenuItem Text="인게임 지표" Icon="view_headline">
                     <RadzenPanelMenuItem Text="Daily Active User" Path="dau"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Weekly Active User" Path="wau"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Monthly Active User" Path="mau"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Retention" Path="retention"></RadzenPanelMenuItem>
                     <RadzenPanelMenuItem Text="New User" Path="nu"></RadzenPanelMenuItem>
                 </RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Marketing Indicators" Icon="view_headline">
+                <RadzenPanelMenuItem Text="마케팅 지표" Icon="view_headline">
                     <RadzenPanelMenuItem Text="Paying User" Path="pu"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="ARPU" Path="arpu"></RadzenPanelMenuItem>
                 </RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
         </RadzenPanelMenu>
