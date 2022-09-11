@@ -9,42 +9,40 @@
 <AuthorizeView>
     <Authorized>
         <RadzenPanelMenu Style="background-color: indianred">
-            <RadzenPanelMenuItem Text="Rds" Icon="cloud" Path="rds"></RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="User" Icon="person">
+                <RadzenPanelMenuItem Text="Account" Icon="person" Path="account"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Currency" Icon="copyright" Path="currency"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Season Pass" Icon="event" Path="seasonpass"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Mail" Icon="mail" Path="mail"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Guild" Icon="people" Path="guild"></RadzenPanelMenuItem>
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="Account" Icon="person">
+                <RadzenPanelMenuItem Text="Black List" Icon="warning" Path="blacklist"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Account Linking" Icon="autorenew" Path="linking"></RadzenPanelMenuItem>
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="Guild" Icon="people">
+                <RadzenPanelMenuItem Text="Guild Search" Icon="zoom_in" Path="guild_search"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Guild Log" Icon="zoom_in" Path="guild_log"></RadzenPanelMenuItem>
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="Search Log" Icon="menu" Path="log"></RadzenPanelMenuItem>
             <RadzenPanelMenuItem Text="Maintenance" Icon="engineering">
+                <RadzenPanelMenuItem Text="Server Url" Path="server_url" Icon="home"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Maintenance Schedule" Path="maintenance" Icon="schedule"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Server Url" Path="server_url" Icon="link"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Update Message" Path="update" Icon="update"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Update Message" Path="update_message" Icon="announcement"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Update Version" Path="update_verision" Icon="view_headline"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Text="Config" Icon="settings">
-                <RadzenPanelMenuItem Text="Server Variable" Path="server-variable" Icon="view_headline"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Game Config" Path="game-config" Icon="view_headline"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Client Option" Path="clientOption-option" Icon="view_headline"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="TblAdminAcl" Path="admin-acl" Icon="view_headline"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="업데이트 버전 설정" Path="UpdateVersionSetting" Icon="view_headline"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="TblData" Path="tbl_data" Icon="view_headline"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="TblServiceDenyCountry" Path="service_deny_country" Icon="view_headline"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="ConstGameSpawnData" Path="const_game_spawnData" Icon="view_headline"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Server Config" Path="server_config" Icon="view_headline"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Client Config" Path="client_config" Icon="view_headline"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="InGame Config" Path="ingame_config" Icon="view_headline"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Util" Icon="hardware">
-                <RadzenPanelMenuItem Text="Ranking" Path="ranking" Icon="show_chart"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Remove Duplicate Ranking" Path="duplicaterankremove" Icon="announcement"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Remove Different Nickname" Path="removediffnickname" Icon="announcement"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Mail" Path="mail" Icon="email"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Text Converter" Path="text-converter" Icon="trending_flat"></RadzenPanelMenuItem>
-            </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Refresh" Path="refresh" Icon="refresh"></RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="SearchUserData" Path="search_userdata" Icon="trending_flat"></RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="PatchServer" Icon="done_all" Path="patchserver"></RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Ec2 Manage" Icon="circle_notifications" Path="ec2_manage"></RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="ServerSetting" Path="server_setting" Icon="refresh"></RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="More">
-                <RadzenPanelMenuItem Text="Item1"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Item2"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="More items">
-                    <RadzenPanelMenuItem Text="More sub items">
-                        <RadzenPanelMenuItem Text="Item1"></RadzenPanelMenuItem>
-                        <RadzenPanelMenuItem Text="Item2"></RadzenPanelMenuItem>
-                    </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="Indicators" Icon="assessment">
+                <RadzenPanelMenuItem Text="InGame Indicators" Icon="view_headline">
+                    <RadzenPanelMenuItem Text="Daily Active User" Path="dau"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="New User" Path="nu"></RadzenPanelMenuItem>
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Marketing Indicators" Icon="view_headline">
+                    <RadzenPanelMenuItem Text="Paying User" Path="pu"></RadzenPanelMenuItem>
                 </RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
         </RadzenPanelMenu>
