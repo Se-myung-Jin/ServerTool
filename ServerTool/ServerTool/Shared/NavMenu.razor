@@ -9,6 +9,7 @@
 <AuthorizeView>
     <Authorized>
         <RadzenPanelMenu Style="background-color: indianred">
+            <RadzenPanelMenuItem Text="Reference Table" Icon="book" Path="reference"></RadzenPanelMenuItem>
             <RadzenPanelMenuItem Text="User" Icon="person">
                 <RadzenPanelMenuItem Text="Account" Icon="person" Path="account"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Currency" Icon="copyright" Path="currency"></RadzenPanelMenuItem>
@@ -24,7 +25,10 @@
                 <RadzenPanelMenuItem Text="Guild Search" Icon="zoom_in" Path="guild_search"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Guild Log" Icon="zoom_in" Path="guild_log"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="로그 조회" Icon="zoom_in" Path="log"></RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="로그 조회" Icon="zoom_in" Path="log">
+                <RadzenPanelMenuItem Text="유저 로그 조회" Icon="zoom_in" Path="user_log"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="운영툴 로그 조회" Icon="zoom_in" Path="admin_log"></RadzenPanelMenuItem>
+            </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Text="Maintenance" Icon="engineering">
                 <RadzenPanelMenuItem Text="Server Url" Path="server_url" Icon="home"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Maintenance Schedule" Path="maintenance" Icon="schedule"></RadzenPanelMenuItem>
@@ -35,6 +39,9 @@
                 <RadzenPanelMenuItem Text="Server Config" Path="server_config" Icon="view_headline"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Client Config" Path="client_config" Icon="view_headline"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="InGame Config" Path="ingame_config" Icon="view_headline"></RadzenPanelMenuItem>
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="Status" Icon="settings">
+                <RadzenPanelMenuItem Text="Server Status" Path="server_status" Icon="view_headline"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Text="결제 관련" Icon="attach_money">
                 <RadzenPanelMenuItem Text="결제 내역" Icon="view_headline" Path="payment_history"></RadzenPanelMenuItem>
