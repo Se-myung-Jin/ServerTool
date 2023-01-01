@@ -9,7 +9,10 @@
 <AuthorizeView>
     <Authorized>
         <RadzenPanelMenu Style="background-color: indianred">
-            <RadzenPanelMenuItem Text="Reference Table" Icon="book" Path="reference"></RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="Reference Table" Icon="book">
+                <RadzenPanelMenuItem Text="테이블 업로드" Icon="cloud" Path="upload_table"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="테이블 조회" Icon="zoom_in" Path="select_table"></RadzenPanelMenuItem>
+            </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Text="User" Icon="person">
                 <RadzenPanelMenuItem Text="Account" Icon="person" Path="account"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Currency" Icon="copyright" Path="currency"></RadzenPanelMenuItem>
@@ -25,7 +28,7 @@
                 <RadzenPanelMenuItem Text="Guild Search" Icon="zoom_in" Path="guild_search"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Guild Log" Icon="zoom_in" Path="guild_log"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="로그 조회" Icon="zoom_in" Path="log">
+            <RadzenPanelMenuItem Text="로그 조회" Icon="zoom_in">
                 <RadzenPanelMenuItem Text="유저 로그 조회" Icon="zoom_in" Path="user_log"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="운영툴 로그 조회" Icon="zoom_in" Path="admin_log"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
@@ -35,13 +38,17 @@
                 <RadzenPanelMenuItem Text="Update Message" Path="update_message" Icon="announcement"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Update Version" Path="update_verision" Icon="view_headline"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Config" Icon="settings">
-                <RadzenPanelMenuItem Text="Server Config" Path="server_config" Icon="view_headline"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Client Config" Path="client_config" Icon="view_headline"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="InGame Config" Path="ingame_config" Icon="view_headline"></RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="Config" Icon="view_headline">
+                <RadzenPanelMenuItem Text="Server Config" Path="server_config" Icon="settings"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Client Config" Path="client_config" Icon="settings"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="InGame Config" Path="ingame_config" Icon="settings"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Status" Icon="settings">
-                <RadzenPanelMenuItem Text="Server Status" Path="server_status" Icon="view_headline"></RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="게임 서비스 관리" Icon="view_headline">
+                <RadzenPanelMenuItem Text="이벤트 관리" Path="event" Icon="event"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="공지 관리" Path="notice" Icon="event"></RadzenPanelMenuItem>
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="Status" Icon="view_headline">
+                <RadzenPanelMenuItem Text="Server Status" Path="server_status" Icon="settings"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Text="결제 관련" Icon="attach_money">
                 <RadzenPanelMenuItem Text="결제 내역" Icon="view_headline" Path="payment_history"></RadzenPanelMenuItem>
