@@ -50,8 +50,8 @@
 </AuthorizeView>
 
 @code{
-    string _versionForce;
-    string _version;
+    string _versionForce = string.Empty;
+    string _version = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
@@ -71,6 +71,6 @@
 
     async Task OnClickVersionAsync(bool force = false)
     {
-       
+
     }
 }
