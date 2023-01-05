@@ -1,10 +1,76 @@
 ﻿@page "/update_version"
+@inject IJSRuntime JS
 
 <AuthorizeView>
     <Authorized>
         <h1>버전 업데이트</h1>
+
+        <div class="row">
+            <div class="col-md-9 col-sm-12">
+                <div>
+                    <div class="table-button-group">
+                        <button type="button" @onclick="@(async () => await OnClickRefreshAsync())" class="btn btn-outline-primary">Refresh</button>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Key</th>
+                                <th class="col-md-3">Value</th>
+                                <th class="col-md-5">Desc</th>
+                                <th>Command</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>VersionForce</td>
+                                <td><input type="text" @bind="@_versionForce" style="width:100%"></td>
+                                <td>강제 업데이트 버전</td>
+                                <td>
+                                    <button type="button" @onclick="@(async () => await OnClickVersionAsync(true))" class="btn btn-outline-primary">Save</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Version</td>
+                                <td><input type="text" @bind="@_version" style="width:100%"></td>
+                                <td>권장 업데이트 버전</td>
+                                <td>
+                                    <button type="button" @onclick="@(async () => await OnClickVersionAsync(false))" class="btn btn-outline-primary">Save</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </Authorized>
     <NotAuthorized>
         <h1>Error 404</h1>
     </NotAuthorized>
 </AuthorizeView>
+
+@code{
+    string _versionForce;
+    string _version;
+
+    protected override async Task OnInitializedAsync()
+    {
+        VersionInitialized();
+    }
+
+    void VersionInitialized()
+    {
+        _version = "0.0.0";
+        _versionForce = "0.0.0";
+    }
+
+    async Task OnClickRefreshAsync()
+    {
+
+    }
+
+    async Task OnClickVersionAsync(bool force = false)
+    {
+       
+    }
+}
