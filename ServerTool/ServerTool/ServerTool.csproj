@@ -11,6 +11,7 @@
     <PackageReference Include="AWSSDK.EC2" Version="3.7.114.7" />
     <PackageReference Include="Blazored.SessionStorage" Version="2.2.0" />
     <PackageReference Include="Radzen.Blazor" Version="3.20.10" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 
   <ItemGroup>
