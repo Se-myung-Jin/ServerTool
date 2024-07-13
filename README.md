@@ -1,2 +1,2 @@
 # ServerTool
-Admin Tool For Game
+Admin Tool For Game using Blazor
